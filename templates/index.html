@@ -6,21 +6,16 @@
     <meta name="description" content="TalentMatch — Smart resume matcher to help recruiters shortlist candidates quickly and effectively.">
     <meta name="author" content="Avdhesh Singh">
     <title>TalentMatch</title>
-    <!-- Favicon -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <!-- Ambient background orbs -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
 
-    <!-- ── NAV ── -->
     <nav>
         <div class="nav-inner">
             <a href="/" class="logo">
@@ -33,7 +28,6 @@
         </div>
     </nav>
 
-    <!-- ── HERO ── -->
     <section class="hero">
         <div class="wrapper">
             <div class="hero-tag">Resume Intelligence Platform</div>
@@ -58,14 +52,11 @@
         </div>
     </section>
 
-    <!-- ── MAIN FORM ── -->
     <section>
         <div class="wrapper">
             <form method="POST" enctype="multipart/form-data" id="matchForm">
 
-                <!-- Card -->
                 <div class="card-main">
-                    <!-- macOS-style card header -->
                     <div class="card-header">
                         <div class="card-header-left">
                             <div class="header-dot dot-red"></div>
@@ -77,10 +68,8 @@
 
                     <div class="card-body">
 
-                        <!-- Upload zones -->
                         <div class="upload-grid">
 
-                            <!-- Job Description -->
                             <div class="drop-zone jd-zone" id="jdZone">
                                 <div class="zone-icon blue">📄</div>
                                 <div class="zone-title">Job Description</div>
@@ -93,7 +82,6 @@
                                 <div class="file-name" id="jdLabel">No file selected</div>
                             </div>
 
-                            <!-- Candidate Resumes -->
                             <div class="drop-zone resume-zone" id="resumeZone">
                                 <div class="zone-icon green">👥</div>
                                 <div class="zone-title">Candidate Resumes</div>
@@ -106,9 +94,8 @@
                                 <div class="file-name" id="resumeLabel">No files selected</div>
                             </div>
 
-                        </div><!-- /upload-grid -->
+                        </div>
 
-                        <!-- Options + Submit -->
                         <div class="options-row">
                             <div class="option-field">
                                 <label class="option-label">Top N Results</label>
@@ -126,10 +113,9 @@
                             </button>
                         </div>
 
-                    </div><!-- /card-body -->
-                </div><!-- /card-main -->
+                    </div>
+                </div>
 
-                <!-- ── RESULTS ── -->
                 {% if results %}
                 <div class="results-section">
                     <div class="results-header">
@@ -170,12 +156,10 @@
         </div>
     </section>
 
-    <!-- ── FOOTER ── -->
     <footer>
         <div class="footer-top">
             <div class="footer-top-inner">
 
-                <!-- Brand col -->
                 <div class="footer-col-brand">
                     <a href="/" class="footer-logo">
                         <div class="logo-dot"></div>
@@ -188,7 +172,6 @@
                     </a>
                 </div>
 
-                <!-- How it works -->
                 <div class="footer-col">
                     <div class="footer-col-title">How It Works</div>
                     <ul class="footer-col-list">
@@ -199,7 +182,6 @@
                     </ul>
                 </div>
 
-                <!-- Supported formats -->
                 <div class="footer-col">
                     <div class="footer-col-title">Supported Formats</div>
                     <ul class="footer-col-list">
@@ -210,7 +192,6 @@
                     </ul>
                 </div>
 
-                <!-- Tech stack -->
                 <div class="footer-col">
                     <div class="footer-col-title">Built With</div>
                     <ul class="footer-col-list">
@@ -224,7 +205,6 @@
             </div>
         </div>
 
-        <!-- Bottom bar -->
         <div class="footer-bottom">
             <div class="footer-bottom-inner">
                 <div class="footer-left">
@@ -241,9 +221,7 @@
         </div>
     </footer>
 
-    <!-- ── JAVASCRIPT ── -->
     <script>
-        // Show selected file name(s) under each drop zone
         function showFileName(input, labelId) {
             const label = document.getElementById(labelId);
             if (input.files.length === 1) {
@@ -255,7 +233,6 @@
             }
         }
 
-        // Drag-and-drop highlight
         ['jdZone', 'resumeZone'].forEach(id => {
             const zone = document.getElementById(id);
             zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('active'); });
@@ -270,7 +247,6 @@
             });
         });
 
-        // Loading state while the backend processes
         document.getElementById('matchForm').addEventListener('submit', function () {
             const btn    = document.getElementById('submitBtn');
             const loader = document.getElementById('btnLoader');
