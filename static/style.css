@@ -1,4 +1,3 @@
-/* ── RESET & ROOT ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -25,7 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ── GRID BACKGROUND ── */
 body::before {
     content: '';
     position: fixed;
@@ -38,7 +36,6 @@ body::before {
     z-index: 0;
 }
 
-/* ── AMBIENT ORBS ── */
 .orb {
     position: fixed;
     border-radius: 50%;
@@ -70,7 +67,6 @@ body::before {
 @keyframes drift2 { to { transform: translate(-60px, -80px); } }
 @keyframes drift3 { to { transform: translate(-40%, -40%); } }
 
-/* ── WRAPPER ── */
 .wrapper {
     position: relative;
     z-index: 1;
@@ -79,7 +75,6 @@ body::before {
     padding: 0 24px;
 }
 
-/* ── NAV ── */
 nav {
     position: sticky;
     top: 0;
@@ -140,7 +135,6 @@ nav {
     transform: translateY(-1px);
 }
 
-/* ── HERO ── */
 .hero {
     padding: 100px 0 60px;
     text-align: center;
@@ -192,7 +186,6 @@ h1 span {
     font-weight: 300;
 }
 
-/* ── STATS ROW ── */
 .stats-row {
     display: flex;
     align-items: center;
@@ -221,7 +214,6 @@ h1 span {
     background: var(--border);
 }
 
-/* ── MAIN CARD ── */
 .card-main {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -260,7 +252,6 @@ h1 span {
 }
 .card-body { padding: 32px 28px; }
 
-/* ── UPLOAD GRID ── */
 .upload-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -375,7 +366,6 @@ h1 span {
     font-style: italic;
 }
 
-/* ── OPTIONS ROW ── */
 .options-row {
     display: flex;
     align-items: flex-end;
@@ -415,7 +405,6 @@ h1 span {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
 
-/* ── SUBMIT BUTTON ── */
 .btn-submit {
     flex-shrink: 0;
     position: relative;
@@ -459,7 +448,6 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── RESULTS ── */
 .results-section { margin-top: 40px; }
 .results-header {
     display: flex;
@@ -562,7 +550,6 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
     text-align: right;
 }
 
-/* Score colour tiers */
 .tier-high .result-score      { color: var(--accent2); }
 .tier-high .result-bar-fill   { background: linear-gradient(90deg, #48bb78, #68d391); }
 .tier-mid  .result-score      { color: var(--accent); }
@@ -570,7 +557,6 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
 .tier-low  .result-score      { color: var(--accent3); }
 .tier-low  .result-bar-fill   { background: linear-gradient(90deg, #ed8936, #f6ad55); }
 
-/* ── FOOTER ── */
 footer {
     position: relative;
     z-index: 1;
@@ -578,7 +564,6 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-/* Top grid section */
 .footer-top {
     padding: 56px 24px 48px;
 }
@@ -597,7 +582,6 @@ footer {
     .footer-top-inner { grid-template-columns: 1fr; }
 }
 
-/* Brand column */
 .footer-col-brand .footer-logo {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -621,7 +605,6 @@ footer {
     margin-bottom: 24px;
 }
 
-/* Other columns */
 .footer-col { }
 .footer-col-title {
     font-family: 'Syne', sans-serif;
@@ -675,7 +658,6 @@ footer {
     flex-shrink: 0;
 }
 
-/* Feedback button */
 .btn-feedback {
     display: inline-flex;
     align-items: center;
@@ -699,7 +681,6 @@ footer {
     transform: translateY(-1px);
 }
 
-/* Bottom bar */
 .footer-bottom {
     border-top: 1px solid var(--border);
     padding: 18px 24px;
